@@ -8,7 +8,7 @@
         <tr>
           <th>Variable</th>
           <th>Pipe</th>
-          <th>Salid</th>
+          <th>Salida</th>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +22,26 @@
           <td>Lowercase</td>
           <td>{{ nombre | lowercase }}</td>
         </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>Slice:3 <small>(Elimina string)</small></td>
+          <td>{{ nombre | slice:3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>Slice:0:3 <small>(Elimina string)</small></td>
+          <td>{{ nombre | slice:0:3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ arreglo }}</td>
+          <td>Slice:1:5 <small>(Elimina string)</small></td>
+          <td>{{ arreglo | slice:1:5 }}</td>
+        </tr>
       </tbody>
     </table>
+    <h3>Slice</h3>
+    <ulr>
+      <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
+    </ulr>
   </div>
 </div>
