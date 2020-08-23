@@ -82,6 +82,26 @@
           <td>async <small>(tarda en llegar como async)</small></td>
           <td>{{ varlorPromesa | async }}</td>
         </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date <small></small></td>
+          <td>{{ fecha | date }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date:'medium' <small></small></td>
+          <td>{{ fecha | date:'medium' }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date:'short' <small></small></td>
+          <td>{{ fecha | date:'short' }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date:'MMMM - dd' <small></small></td>
+          <td>{{ fecha | date:'MMMM - dd' }}</td>
+        </tr>
       </tbody>
     </table>
     <h3>Slice</h3>
