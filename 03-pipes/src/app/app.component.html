@@ -59,8 +59,23 @@
         </tr>
         <tr>
           <td>{{ porcentaje }}</td>
-          <td>percent <small>(Ver 2 decimales)</small></td>
+          <td>percent:'2.2-2' <small>(Ver 2 decimales)</small></td>
           <td>{{ porcentaje | percent:'2.2-2' }}</td>
+        </tr>
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency:'MXN' <small>(moneda de México)</small></td>
+          <td>{{ salario | currency:'MXN':'symbol-narrow' }}</td>
+        </tr>
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency:'MXN':'symbol <small>(Simbolo de MX)</small></td>
+          <td>{{ salario | currency:'MXN':'symbol' }}</td>
+        </tr>
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency:'MXN':'symbol':'.0-0' <small>(Simbolo de MX y sin decimales)</small></td>
+          <td>{{ salario | currency:'MXN':'symbol':'.0-0' }}</td>
         </tr>
       </tbody>
     </table>
