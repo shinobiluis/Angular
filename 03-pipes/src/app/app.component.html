@@ -37,11 +37,26 @@
           <td>Slice:1:5 <small>(Elimina string)</small></td>
           <td>{{ arreglo | slice:1:5 }}</td>
         </tr>
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'1.0-0'</td>
+          <td>{{ PI | number:'1.0-0'}}</td>
+        </tr>
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'3.0-0'</td>
+          <td>{{ PI | number:'3.0-0'}}</td>
+        </tr>
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number:'1.0-0'</td>
+          <td>{{ PI | number:'.0-2'}}</td>
+        </tr>
       </tbody>
     </table>
     <h3>Slice</h3>
-    <ulr>
+    <ul>
       <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
-    </ulr>
+    </ul>
   </div>
 </div>
