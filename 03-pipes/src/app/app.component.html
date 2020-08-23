@@ -77,6 +77,11 @@
           <td>currency:'MXN':'symbol':'.0-0' <small>(Simbolo de MX y sin decimales)</small></td>
           <td>{{ salario | currency:'MXN':'symbol':'.0-0' }}</td>
         </tr>
+        <tr>
+          <td>{{ varlorPromesa }}</td>
+          <td>async <small>(tarda en llegar como async)</small></td>
+          <td>{{ varlorPromesa | async }}</td>
+        </tr>
       </tbody>
     </table>
     <h3>Slice</h3>
