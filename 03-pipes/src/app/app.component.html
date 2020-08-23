@@ -102,6 +102,29 @@
           <td>date:'MMMM - dd' <small></small></td>
           <td>{{ fecha | date:'MMMM - dd' }}</td>
         </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date:'MMMM - dd':'':'es <small>(especificamos es)</small></td>
+          <td>{{ fecha | date:'MMMM - dd':'':'es' }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date:'MMMM - dd':'':'fr' <small>(especificamos fr)</small></td>
+          <td>{{ fecha | date:'MMMM - dd':'':'fr' }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>
+            date:'MMMM - dd':'':'{{idioma}}'
+            <br>
+            <button (click)="idioma='es'" class="mr-1 btn btn-primary">Español</button>
+            <button (click)="idioma='en'" class="mr-1 btn btn-primary">Ingles</button>
+            <button (click)="idioma='fr'" class="mr-1 btn btn-primary">Frances</button>
+          </td>
+          <td>
+            {{ fecha | date:'MMMM - dd':'':idioma }}
+          </td>
+        </tr>
       </tbody>
     </table>
     <h3>Slice</h3>

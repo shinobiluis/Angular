@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import '@angular/common/locales/global/es';
+import '@angular/common/locales/global/fr';
+import '@angular/common/locales/global/en';
 
 import { AppComponent } from './app.component';
 
