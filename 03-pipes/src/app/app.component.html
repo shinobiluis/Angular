@@ -13,6 +13,16 @@
       </thead>
       <tbody>
         <tr>
+          <td>{{ nombre2 }}</td>
+          <td>Perzonalizado (capitalizado:true)</td>
+          <td>{{ nombre2 | capitalizado:true }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre2 }}</td>
+          <td>Perzonalizado (capitalizado:false)</td>
+          <td>{{ nombre2 | capitalizado:false }}</td>
+        </tr>
+        <tr>
           <td>{{ nombre }}</td>
           <td>Uppercase</td>
           <td>{{ nombre | uppercase }}</td>
@@ -141,5 +151,17 @@
         </pre>
       </div>
     </div>
+  </div>
+</div>
+<h3 class="mt-4">Domseguro</h3>
+<hr>
+<div class="row mb-5">
+  <div class="col">
+    <iframe width="560" 
+            height="315" 
+            [src]="videoURL | domseguro"
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
   </div>
 </div>
