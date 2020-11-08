@@ -9,10 +9,11 @@ import { PaisService } from '../../services/pais.service'
 export class TemplateComponent implements OnInit {
 
   usuario= {
-    nombre: 'Luis',
+    nombre: 'Luiss',
     apellido: 'Alcantara',
     correo: 'geek@gmail.com',
-    pais:''
+    pais:'ARG',
+    genero:'M'
   }
   paises: any[]=[];
 
