@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ValidadoresService }  from '../../services/validadores.service'
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,7 +11,7 @@ export class RecativeComponent implements OnInit {
 
   forma: FormGroup;
 
-  constructor( private fb: FormBuilder ) { 
+  constructor( private fb: FormBuilder, private validadores: ValidadoresService ) { 
     this.crearFormulario();
     this.cargarDataAlFormulario();
   }
@@ -40,7 +41,7 @@ export class RecativeComponent implements OnInit {
   crearFormulario(){
     this.forma = this.fb.group({
       nombre:['', [ Validators.required, Validators.minLength(4) ] ],
-      apellido:['', Validators.required],
+      apellido:['', [Validators.required, this.validadores.noHerrera ]],
       correo: ['', [ Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'), Validators.required ] ],
       direccion: this.fb.group({
         distrito: ['', Validators.required ],
@@ -61,6 +62,7 @@ export class RecativeComponent implements OnInit {
         ciudad: "df"
       }
     })
+
   }
 
   agregarPasatiempo(){
