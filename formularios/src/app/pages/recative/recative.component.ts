@@ -14,6 +14,7 @@ export class RecativeComponent implements OnInit {
   constructor( private fb: FormBuilder, private validadores: ValidadoresService ) { 
     this.crearFormulario();
     this.cargarDataAlFormulario();
+    this.crearListeners();
   }
 
   ngOnInit(): void {
@@ -68,6 +69,13 @@ export class RecativeComponent implements OnInit {
     });
   }
 
+  crearListeners(){
+    this.forma.valueChanges.subscribe( valor => {
+      console.log(valor)
+    } )
+    this.forma.statusChanges.subscribe( status => console.log({status}));
+    this.forma.get("nombre").valueChanges.subscribe( console.log )
+  }
   cargarDataAlFormulario(){
     // this.forma.setValue({
     this.forma.reset({
