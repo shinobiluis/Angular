@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service'; // importamos
 import { Component, OnInit } from '@angular/core';
 import { HeroeModel } from '../../models/heroe.models' // importamos
@@ -15,9 +16,19 @@ export class HeroeComponent implements OnInit {
   heroe = new HeroeModel();
 
   // usamos el servicio de heroesService
-  constructor( private heroesService: HeroesService ) { }
+  constructor( private heroesService: HeroesService,
+               private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if( id !== 'nuevo'){
+      this.heroesService.getHeroe( id )
+        .subscribe( (resp: HeroeModel) => {
+          this.heroe = resp;
+          this.heroe.id = id;
+          console.log(resp)
+        })
+    }
   }
 
   guardar( form: NgForm ){
