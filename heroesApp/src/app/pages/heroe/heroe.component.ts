@@ -25,10 +25,17 @@ export class HeroeComponent implements OnInit {
     }
     console.log(form);
     console.log(this.heroe)
-    // usamos el servicio de crear heroe pasando el modelo
-    this.heroesService.crearHeroe( this.heroe )
+    if (this.heroe.id){
+      this.heroesService.actualizarHeroe( this.heroe )
+      .subscribe( resp => {
+        console.log(resp);
+      });
+    }else{
+      // usamos el servicio de crear heroe pasando el modelo
+      this.heroesService.crearHeroe( this.heroe )
       .subscribe( resp => { // nos subcribimos a la respuesta
         console.log(resp); // vemos la respuesta
       });
+    }
   }
 }
