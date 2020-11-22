@@ -35,4 +35,27 @@ export class HeroesService {
     // mandamos el put
     return this.http.put(`${this.url}/heroes/${heroe.id}.json`, heroeTemp);
   }
+
+  getHeroes() {
+    // nos tramoes los heroes
+    return this.http.get(`${this.url}/heroes.json`).
+      pipe(
+        // firebase retorna de forma extraña por eso creamos un metodo para crear el objeto que queremos
+        map(resp => this.crearArreglo(resp))
+      );
+  }
+
+  // Este metodo solo es para firebase
+  private crearArreglo(heroesObj: object ){
+    const heroes: HeroeModel[] = [];
+    console.log(heroesObj);
+    if(heroesObj === null) { return []; }
+
+    Object.keys( heroesObj ).forEach( key => {
+      const heroe: HeroeModel = heroesObj[key];
+      heroe.id = key;
+      heroes.push(heroe);
+    });
+    return heroes;
+  }
 }
