@@ -25,7 +25,7 @@ export class HeroeComponent implements OnInit {
     }
     console.log(form);
     console.log(this.heroe)
-    if (this.heroe.id){
+    if (this.heroe.id){ // si el id existe actualizamos
       this.heroesService.actualizarHeroe( this.heroe )
       .subscribe( resp => {
         console.log(resp);

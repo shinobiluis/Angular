@@ -26,10 +26,13 @@ export class HeroesService {
   }
 
   actualizarHeroe( heroe: HeroeModel ){
+    // creamos un hero temporal para eliminar el id
     const heroeTemp = {
       ...heroe
     };
+    // eliminamos el id de la variable
     delete heroeTemp.id;
+    // mandamos el put
     return this.http.put(`${this.url}/heroes/${heroe.id}.json`, heroeTemp);
   }
 }
