@@ -1,3 +1,4 @@
+import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ComponentsModule
+    ComponentsModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
