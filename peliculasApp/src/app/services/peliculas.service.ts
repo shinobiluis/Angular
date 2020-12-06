@@ -24,6 +24,9 @@ export class PeliculasService {
       page: this.carteleraPage.toString()
     }
   }
+  resetCarteleraPage(){
+    this.carteleraPage=1;
+  }
 
   getCartelera():Observable<Movie[]> {
 
@@ -41,6 +44,19 @@ export class PeliculasService {
         this.carteleraPage += 1;
         this.cargando = false;
       })
+    )
+  }
+
+
+  buscarPeliculas( texto: string ):Observable<Movie[]>{
+    const params = {...this.params, page:'1', query: texto};
+    // https://api.themoviedb.org/3/search/movie?api_key=1865f43a0549ca50d341dd9ab8b29f49&language=en-US&query=hola&page=1&include_adult=false
+    // https://api.themoviedb.org/3/search/company?api_key=1865f43a0549ca50d341dd9ab8b29f49&query=hola&page=1
+
+    return this.http.get<CarteleraResponse>(`${this.baseUrl}/search/movie`, {
+      params
+    }).pipe(
+      map( resp => resp.results )
     )
   }
 }
